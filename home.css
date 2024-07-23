@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F8F9FA;
+    color: #212529;
+}
+
+header {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #6C757D;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    display: none;
+    background-color: #FFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.active {
+    display: block;
+}
+
+h2 {
+    margin-top: 0;
+    color: #007BFF;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+}
+
+form input, form textarea {
+    background-color: #FFF;
+}
+
+form button {
+    background-color: #007BFF;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form button:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+/* Remove Parallax Container Styles */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: auto; /* Adjust to fit content */
+    margin-bottom: 20px; /* Space between content */
+}
+
+.parallax-content {
+    position: relative; /* Normal flow for content */
+    text-align: center;
+    color: #000; /* Adjust text color as needed */
+}
+
+/* Home Section Styles */
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-image {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.home-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-content {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+    }
+
+    .home-image, .home-content {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        padding: 6px;
+    }
+
+    form input, form textarea, form button {
+        padding: 6px;
+    }
+
+    form label {
+        margin: 6px 0 2px;
+    }
+
+    form button {
+        padding: 6px;
+    }
+
+    section {
+        padding: 10px;
+    }
+}

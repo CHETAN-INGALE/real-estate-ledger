@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script defer src="js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Real Estate Property Ledger</h1>
+        <nav id="nav" class="hidden">
+            <ul>
+                <li><a href="#" data-section="home" class="active">Home</a></li>
+                <li><a href="#" data-section="register">Register Property</a></li>
+                <li><a href="#" data-section="update">Update Property</a></li>
+                <li><a href="#" data-section="transfer">Transfer Property</a></li>
+                <li><a href="#" data-section="view">View Registered Properties</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Homepage with Login Form -->
+        <section id="home" class="form-section active">
+            <div class="home-container">
+                <div class="home-image">
+                    <img src="images/property-management.jpg" alt="Property Management">
+                </div>
+                <div class="home-content">
+                    <h2>Welcome to the Property Management System</h2>
+                    <p>Manage your properties efficiently with our system.</p>
+                    
+                    <div class="home-login">
+                        <h2>Login</h2>
+                        <form id="login-form">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                            
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                            
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Property Registration Form -->
+        <section id="register" class="form-section">
+            <h2>Register Property</h2>
+            <form>
+                <label for="property-id">Property ID:</label>
+                <input type="text" id="property-id" name="property-id" required>
+                
+                <label for="owner-name">Owner Name:</label>
+                <input type="text" id="owner-name" name="owner-name" required>
+                
+                <label for="property-type">Property Type:</label>
+                <input type="text" id="property-type" name="property-type" required>
+                
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+                
+                <label for="aadhaar-number">Aadhaar Number:</label>
+                <input type="text" id="aadhaar-number" name="aadhaar-number" required placeholder="XXXX-XXXX-XXXX" maxlength="14">
+                
+                <label for="date-of-purchase">Date of Purchase:</label>
+                <input type="date" id="date-of-purchase" name="date-of-purchase" required>
+                
+                <button type="submit">Register</button>
+            </form>
+        </section>
+        
+        <!-- Property Update Form -->
+        <section id="update" class="form-section">
+            <h2>Update Property</h2>
+            <form>
+                <label for="property-id-update">Property ID:</label>
+                <input type="text" id="property-id-update" name="property-id-update" required>
+                
+                <label for="new-owner-name">New Owner Name:</label>
+                <input type="text" id="new-owner-name" name="new-owner-name">
+                
+                <label for="new-address">New Address:</label>
+                <textarea id="new-address" name="new-address"></textarea>
+                
+                <button type="submit">Update</button>
+            </form>
+        </section>
+        
+        <!-- Property Transfer Form -->
+        <section id="transfer" class="form-section">
+            <h2>Transfer Property</h2>
+            <form>
+                <label for="property-id-transfer">Property ID:</label>
+                <input type="text" id="property-id-transfer" name="property-id-transfer" required>
+                
+                <label for="current-owner">Current Owner:</label>
+                <input type="text" id="current-owner" name="current-owner" required>
+                
+                <label for="new-owner">New Owner:</label>
+                <input type="text" id="new-owner" name="new-owner" required>
+                
+                <button type="submit">Transfer</button>
+            </form>
+        </section>
+        
+        <!-- View Registered Properties -->
+        <section id="view" class="form-section">
+            <h2>Registered Properties</h2>
+            <div id="property-list">
+                <!-- Property list will be dynamically populated here -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
