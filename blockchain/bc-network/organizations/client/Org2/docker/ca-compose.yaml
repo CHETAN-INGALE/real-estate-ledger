@@ -1,0 +1,21 @@
+version: '2.1'
+
+networks:
+  akb:
+
+services:
+  $SERVICE_NAME:
+    image: hyperledger/fabric-ca:$IMAGE_TAG
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=$CA_NAME
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_PORT=$CA_PORT
+    ports:
+      - $CA_PORT:$CA_PORT
+    command: sh -c 'fabric-ca-server start -b caAdmin:caAdminpw -d'
+    volumes:
+      - ../ca-server:/etc/hyperledger/fabric-ca-server
+    container_name: $CA_NAME
+    networks:
+      - akb

@@ -1,0 +1,47 @@
+version: '2.1'
+
+volumes:
+  client:
+    name: $NODE_FULL_NAME
+
+networks:
+  akb:
+
+services:
+  $SERVICE_NAME:
+    container_name: $NODE_FULL_NAME
+    image: hyperledger/fabric-peer:$IMAGE_TAG
+    environment:
+      # Generic client variables
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      # the following setting starts chaincode containers on the same
+      # bridge network as the clients
+      # https://docs.docker.com/compose/networking/
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=${PROJECT_NAME}_akb
+      - FABRIC_LOGGING_SPEC=INFO
+      # - FABRIC_LOGGING_SPEC=DEBUG
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      # Peer specific variabes
+      - CORE_PEER_ID=$NODE_FULL_NAME
+      - CORE_PEER_ADDRESS=$NODE_FULL_NAME:$NODE_PORT
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:$NODE_PORT
+      - CORE_PEER_CHAINCODEADDRESS=$NODE_FULL_NAME:$NODE_PORT_CC
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:$NODE_PORT_CC
+      - CORE_PEER_GOSSIP_BOOTSTRAP=$NODE_FULL_NAME:$NODE_PORT
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=$NODE_FULL_NAME:$NODE_PORT
+      - CORE_PEER_LOCALMSPID=$MSP_NAME
+    volumes:
+        - /var/run/:/host/var/run/
+        - $NODE_PATH/msp:/etc/hyperledger/fabric/msp
+        - $NODE_PATH/tls:/etc/hyperledger/fabric/tls
+        - client:/var/hyperledger/production
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/client
+    command: peer node start
+    ports:
+      - $NODE_PORT:$NODE_PORT
+    networks:
+      - akb
