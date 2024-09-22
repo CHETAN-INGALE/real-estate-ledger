@@ -21,3 +21,12 @@ CREATE TABLE users (
     username VARCHAR(50) PRIMARY KEY,
     password_hash TEXT NOT NULL
 );
+
+CREATE TABLE property (
+    PropertyID SERIAL PRIMARY KEY,
+    OwnerUsername VARCHAR(255) NOT NULL,
+    OwnerName VARCHAR(255) NOT NULL,
+    Address TEXT NOT NULL,
+    PropertyType VARCHAR(100),
+    DateOfPurchase DATE
+);
