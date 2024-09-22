@@ -8,6 +8,7 @@ import (
 	"net/http"
 
 	_ "github.com/lib/pq"
+	"github.com/rs/cors"
 )
 
 // Replace with your PostgreSQL connection string
@@ -108,10 +109,18 @@ func GetPropertyDetailsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// Create a CORS middleware
+	corsHandler := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"}, // Replace with your frontend domain
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
+		AllowedHeaders:   []string{"Content-Type", "Authorization"},
+		AllowCredentials: true,
+	}).Handler
+
 	http.HandleFunc("/register-property", RegisterPropertyHandler)
 	http.HandleFunc("/update-property-owner", UpdatePropertyOwnerHandler)
 	http.HandleFunc("/get-property-details", GetPropertyDetailsHandler)
 
-	fmt.Println("Server listening on port 8080")
-	http.ListenAndServe("0.0.0.0:8080", nil)
+	fmt.Println("Server listening on port 8000")
+	http.ListenAndServe("0.0.0.0:8000", corsHandler(nil))
 }

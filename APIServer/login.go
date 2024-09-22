@@ -10,6 +10,7 @@ import (
 	"net/http"
 
 	_ "github.com/lib/pq"
+	"github.com/rs/cors"
 )
 
 // User struct to hold login data
@@ -78,6 +79,15 @@ func loginHandler(db *sql.DB) http.HandlerFunc {
 }
 
 func main() {
+
+	// Create a CORS middleware
+	corsHandler := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"}, // Replace with your frontend domain
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
+		AllowedHeaders:   []string{"Content-Type", "Authorization"},
+		AllowCredentials: true,
+	}).Handler
+
 	// Connect to the database
 	db, err := connectDB()
 	if err != nil {
@@ -90,7 +100,7 @@ func main() {
 
 	// Start the server on port 8080
 	log.Println("Server started on http://141.148.219.156:8080")
-	if err := http.ListenAndServe("0.0.0.0:8080", nil); err != nil {
+	if err := http.ListenAndServe("0.0.0.0:8080", corsHandler(nil)); err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
 }
