@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Database connection string
-	connStr := "user=postgres dbname=real-estate-ledger password=password sslmode=disable"
+	connStr := "host=141.148.219.156 user=postgres dbname=real-estate-ledger password=postgres sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)

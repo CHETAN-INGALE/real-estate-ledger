@@ -1,1 +1,5 @@
 blockchain/readme.pdf
+APIserver/go.mod
+APIserver/go.sum
+database/go.mod
+database/go.sum

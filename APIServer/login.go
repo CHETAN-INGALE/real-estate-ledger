@@ -20,7 +20,7 @@ type User struct {
 
 // Database connection function
 func connectDB() (*sql.DB, error) {
-	connStr := "user=postgres password=password dbname=real-estate-ledger sslmode=disable"
+	connStr := "host=141.148.219.156 user=postgres dbname=real-estate-ledger password=postgres sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		return nil, err
@@ -89,8 +89,8 @@ func main() {
 	http.HandleFunc("/login", loginHandler(db))
 
 	// Start the server on port 8080
-	log.Println("Server started on http://localhost:8080")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	log.Println("Server started on http://141.148.219.156:8080")
+	if err := http.ListenAndServe("0.0.0.0:8080", nil); err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
 }
