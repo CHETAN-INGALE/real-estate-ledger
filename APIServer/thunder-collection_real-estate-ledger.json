@@ -1,28 +1,74 @@
 {
     "clientName": "Thunder Client",
-    "collectionName": "real-estate-ledger",
-    "collectionId": "1b23b2bd-884e-4f87-81f2-00ffafac30ec",
-    "dateExported": "2024-09-22T06:57:07.403Z",
+    "collectionName": "real-estate-ledger-server",
+    "collectionId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
+    "dateExported": "2024-09-23T13:23:30.564Z",
     "version": "1.2",
     "folders": [],
     "requests": [
         {
-            "_id": "a4c85438-4cd9-4e6e-bd85-75109e15d6f5",
-            "colId": "1b23b2bd-884e-4f87-81f2-00ffafac30ec",
+            "_id": "83721d94-062f-4311-9671-3960250c970a",
+            "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
             "containerId": "",
             "name": "Login",
-            "url": "http://141.148.219.156:8080/login",
+            "url": "http://141.148.219.156:8000/login",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-09-22T06:56:55.908Z",
-            "modified": "2024-09-22T06:56:55.908Z",
+            "created": "2024-09-23T13:21:01.821Z",
+            "modified": "2024-09-23T13:23:08.494Z",
             "headers": [],
             "body": {
                 "type": "json",
                 "raw": "{\n  \"username\": \"Amol\",\n  \"password\": \"password\"\n}",
                 "form": []
             }
+        },
+        {
+            "_id": "d1ed0a99-60e7-4220-a4c1-4445217959ce",
+            "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
+            "containerId": "",
+            "name": "Register Property",
+            "url": "http://141.148.219.156:8000/register-property",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-09-23T13:21:01.825Z",
+            "modified": "2024-09-23T13:23:07.325Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"owner_username\": \"john_doe\",\n  \"owner_name\": \"John Doe\",\n  \"address\": \"1234 Main St, Springfield\",\n  \"property_type\": \"Residential\",\n  \"date_of_purchase\": \"2023-09-23\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "0027f954-3b76-4430-ac92-0c5801cdb4ab",
+            "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
+            "containerId": "",
+            "name": "Update Property",
+            "url": "http://141.148.219.156:8000/update-property",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-09-23T13:21:01.826Z",
+            "modified": "2024-09-23T13:23:06.415Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"property_id\": 5,\n  \"owner_username\": \"john_doe_updated\",\n  \"owner_name\": \"John Doe Updated\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e2a0bccd-4e21-4015-b655-559c9b9eed09",
+            "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
+            "containerId": "",
+            "name": "Get Property",
+            "url": "http://141.148.219.156:8000/get-property/5",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-09-23T13:21:01.827Z",
+            "modified": "2024-09-23T13:23:04.567Z",
+            "headers": []
         }
     ],
-    "ref": "xfTiLz_kkDuo0RyfFKctAAsLkVn4sV7p0LnHsH9O97gBo1v3uIz_fWzJbDEVo05lR-Wyun6uTacYrC907XBX3Q"
+    "ref": "LPXQvOPYz1lguMii96SzSFfnWMvV0_LEeqBLR8Rq9cijFdzW_7do3UW6EVsHlpP49u0kIbZGs2k6vAQaN6l2lA"
 }
