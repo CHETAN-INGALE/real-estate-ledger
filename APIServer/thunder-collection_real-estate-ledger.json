@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "real-estate-ledger-server",
     "collectionId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
-    "dateExported": "2024-09-23T13:23:30.564Z",
+    "dateExported": "2024-09-23T13:43:59.563Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -11,11 +11,11 @@
             "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
             "containerId": "",
             "name": "Login",
-            "url": "http://141.148.219.156:8000/login",
+            "url": "http://141.148.219.156:8080/login",
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-09-23T13:21:01.821Z",
-            "modified": "2024-09-23T13:23:08.494Z",
+            "modified": "2024-09-23T13:33:04.914Z",
             "headers": [],
             "body": {
                 "type": "json",
@@ -28,11 +28,11 @@
             "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
             "containerId": "",
             "name": "Register Property",
-            "url": "http://141.148.219.156:8000/register-property",
+            "url": "http://141.148.219.156:8080/register-property",
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-09-23T13:21:01.825Z",
-            "modified": "2024-09-23T13:23:07.325Z",
+            "modified": "2024-09-23T13:32:49.739Z",
             "headers": [],
             "body": {
                 "type": "json",
@@ -45,15 +45,15 @@
             "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
             "containerId": "",
             "name": "Update Property",
-            "url": "http://141.148.219.156:8000/update-property",
+            "url": "http://141.148.219.156:8080/update-property",
             "method": "PUT",
             "sortNum": 30000,
             "created": "2024-09-23T13:21:01.826Z",
-            "modified": "2024-09-23T13:23:06.415Z",
+            "modified": "2024-09-23T13:33:13.141Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"property_id\": 5,\n  \"owner_username\": \"john_doe_updated\",\n  \"owner_name\": \"John Doe Updated\"\n}",
+                "raw": "{\n  \"property_id\": 7,\n  \"owner_username\": \"john_doe_updated\",\n  \"owner_name\": \"John Doe Updated\"\n}",
                 "form": []
             }
         },
@@ -62,13 +62,13 @@
             "colId": "099243e4-0a4f-43c3-b387-6533c779bcb6",
             "containerId": "",
             "name": "Get Property",
-            "url": "http://141.148.219.156:8000/get-property/5",
+            "url": "http://141.148.219.156:8080/get-property/7",
             "method": "GET",
             "sortNum": 40000,
             "created": "2024-09-23T13:21:01.827Z",
-            "modified": "2024-09-23T13:23:04.567Z",
+            "modified": "2024-09-23T13:33:16.820Z",
             "headers": []
         }
     ],
-    "ref": "LPXQvOPYz1lguMii96SzSFfnWMvV0_LEeqBLR8Rq9cijFdzW_7do3UW6EVsHlpP49u0kIbZGs2k6vAQaN6l2lA"
+    "ref": "LPXQvOPYz1lguMii96SzSFfnWMvV0_LEeqBLR8Rq9cjWTU4cqUa-qYIb_j9CvhHOdtDjvIB2zixTuts47yH1wg"
 }
