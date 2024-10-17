@@ -108,7 +108,7 @@ func getProperty(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	var err error
-	connStr := "user=postgres dbname=real-estate-ledger password=postgres host=141.148.219.156 sslmode=disable"
+	connStr := "user=postgres dbname=real-estate-ledger password=postgres sslmode=disable"
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
@@ -131,6 +131,6 @@ func main() {
 
 	handler := c.Handler(router)
 
-	log.Println("Server running on port 8000")
+	log.Println("Server running on port http://localhost:8080/")
 	http.ListenAndServe("0.0.0.0:8080", handler)
 }
